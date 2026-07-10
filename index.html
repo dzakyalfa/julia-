@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><link href="https://feeldreams.github.io/heihbd/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+<head>
+<title>Happy Birthday</title>
+<link rel="icon" type="image/x-icon" href="https://malasid.github.io/favicon.png">
+<meta name="description" content="HTML Bucin Malas.id">
+<style>
+#wallpaper{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+html,body{
+    overflow-x:hidden;
+}
+
+#Content{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+blockquote{
+    width:90%;
+    max-width:420px;
+    margin:auto;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+#fotostiker,
+#fotostiker1,
+#fotostiker2,
+#fotostiker3,
+#fotostiker4,
+#fotostiker5,
+#fotostiker6{
+    width:180px;
+    height:auto;
+}
+
+@media(max-width:480px){
+
+    #fotostiker,
+    #fotostiker1,
+    #fotostiker2,
+    #fotostiker3,
+    #fotostiker4,
+    #fotostiker5,
+    #fotostiker6{
+        width:150px;
+    }
+
+    #halo{
+        font-size:26px;
+    }
+
+    #kalimat,
+    #pesan1,
+    #pesan2,
+    #pesan3,
+    #pesan4,
+    #pesan5,
+    #pesan6,
+    #pesan7,
+    #pesan8,
+    #pesan9,
+    #pesan10{
+        font-size:17px;
+        line-height:1.7;
+    }
+
+    #By{
+        font-size:18px;
+    }
+
+}
+
+/* ====== FIX RESPONSIVE (background & kotak pesan) ====== */
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+#bodyblur{
+  overflow: hidden;
+}
+
+#wallpaper{
+  transform: scale(1) !important;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+blockquote{
+  width: 90% !important;
+  max-width: 380px !important;
+}
+
+@media (max-width: 480px){
+  blockquote{
+    max-width: 320px !important;
+    padding: 16px !important;
+  }
+}
+
+/* ====== EFEK FOTO POLAROID BERHAMBURAN ====== */
+.polaroid{
+  position: absolute;
+  z-index: 0;
+  width: 120px;
+  padding: 10px 10px 32px 10px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+  border-radius: 4px;
+  opacity: 0;
+  animation: floatUp linear 1 forwards;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.love-burst{
+  position: fixed;
+  font-size: 22px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: loveBurst 1s ease-out forwards;
+}
+@keyframes loveBurst{
+  0%   { transform: translate(0,0) scale(.6); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(1.3); opacity: 0; }
+}
+.polaroid img{
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+.polaroid span{
+  display: block;
+  text-align: center;
+  font-family: var(--gaya-font2);
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+@keyframes floatUp{
+  0%   { transform: translateY(20vh) rotate(var(--rot)); opacity: 0; }
+  10%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(var(--rot)); opacity: 0; }
+}
+</style>
+</head>
+<body>
+  
+   <!-- Ganti Audio di sini -->
+   <audio src="music.mp3" id="linkmp3"></audio>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper --><img src="jule1.jpg" id="wallpaper"/><div id="beneranblur"></div>
+   </div>
+   
+   <div id='Content'>
+
+     <div id="kadoIn">
+       <!-- Tombol Surat --><img src="https://feeldreams.github.io/kadoin.png"/>
+     </div>
+     <p id="ket">Klik Kadonya!</p>
+
+     <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker1"/>
+         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2"/>
+         <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker3"/>
+         <img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>
+         <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker5"/>
+         
+         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker6"/>
+     </div>
+     
+     <p id="halo" class="halo"></p>
+     
+     <div><blockquote id='bq' data-text='㋡'>
+       <p id="kalimat">jangan hina w yak kalo bahasa jermannya salah 🥳❤️❤️❤️</p>
+
+       <p id="pesan1">Klik 4 LOVE di Bawah! 😆❤️❤️❤️</p>
+       <div id="kolombaru">
+         <li id="lv1">🤍</li>
+         <li id="lv2">🤍</li>
+         <li id="lv3">🤍</li>
+         <li id="lv4">🤍</li>
+       </div>
+
+       <p id="pesan2">wait yaaak loading dulu</p>
+       <!-- Pesan -->
+       <p id="pesan3">Alles Gute zum Geburtstag🎉 ❤️</p>
+       <p id="pesan4">Viel Erfolg beim Deutschlernen!❤️</p>
+       <p id="pesan5" class="gaya2">Wenn Julia sich gestresst fühlt, einfach sagen. Wir regeln das gemeinsam.</p>
+       <p id="pesan6" class="gaya2">Ich hoffe, dass Julia Tage immer mit schönen Dingen gefüllt sind. 😆❤️</p>
+       <p id="pesan7" class="gaya2">Pass gut auf deine Gesundheit auf, damit du mir weiterhin guten Kaffee empfehlen kannst. Hehe. ☕ ❤️❤️❤️</p>
+       <p id="pesan8" class="gaya2">:v</p>
+       <p id="pesan9" class="gaya2">Ich hoffe, dass Julia alle ihre Ziele erreicht, Wish You All The Best ul❤️ 🥳❤️</p>
+       <p id="pesan10" class="gaya2">Happy Level Up Day!! 🥳</p>
+       
+       <!-- Tombol Lanjut -->
+       <p id="opsL">Klik untuk Lanjut</p>
+     </blockquote></div>
+
+     <!-- Tombol Kirim Pesan -->
+     <div id="Tombol"><a id="By">&#128140; Lanjut</a></div>
+
+     <!-- Pesan Tambahan -->
+     <p id="katatambahan" class="sembunyi">Gajadi deh soalnya julia......😜</p>
+     
+     <!-- Pesan Ditolak -->
+     <div id="pesanditolak">
+       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
+       <p id="kataditolak">Yaudah kalo gamau mh 😜</p>
+     </div>
+
+   </div>
+
+<script>
+  const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src); ftganti=0;fungsi=0;fungsiAwal=0;deffotostiker=fotostiker.src;function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-snowflake"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-snowflake"); if (heartArr.length > 100) {heartArr[0].remove()}},100);Content.style = "opacity:1;margin-top:16vh"; const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); 
+
+  const fotoList = [
+    { src: "jule1.jpg", caption: "fucek julieee tapi ❤️❤️❤️ 🥹" },
+    { src: "jule2.jpg", caption: "gapunya poto imut juliee 😜" },
+    { src: "jule3.jpg", caption: "Klik potonya juliee 🥳❤️" },
+    { src: "jule5.jpg", caption: "memank imut" },
+  ];
+
+  function loveEffect(x, y){
+    const jumlah = 6;
+    for(let i=0; i<jumlah; i++){
+      const love = document.createElement("div");
+      love.className = "love-burst";
+      love.textContent = "❤️";
+      love.style.left = x + "px";
+      love.style.top = y + "px";
+      love.style.setProperty("--dx", (Math.random()*160-80) + "px");
+      love.style.setProperty("--dy", (Math.random()*-160-40) + "px");
+      love.style.animationDelay = (Math.random()*0.15) + "s";
+      body.appendChild(love);
+      setTimeout(() => love.remove(), 1200);
+    }
+  }
+
+  function munculFoto(){
+    const data = fotoList[Math.floor(Math.random() * fotoList.length)];
+    const pol = document.createElement("div");
+    pol.className = "polaroid";
+    pol.style.setProperty("--rot", (Math.random()*20-10) + "deg");
+    pol.style.left = (Math.random()*70 + 5) + "vw";
+    pol.style.animationDuration = (Math.random()*4 + 7) + "s";
+    pol.innerHTML = `<img src="${data.src}"><span>${data.caption}</span>`;
+    pol.addEventListener("click", (e) => loveEffect(e.clientX, e.clientY));
+    // Disisipkan SEBELUM #Content, biar tampil di belakang boneka/kotak pesan
+    body.insertBefore(pol, document.getElementById("Content"));
+    setTimeout(() => pol.remove(), 12000);
+  }
+
+  let fotoInterval;
+  function mulaiFotoBerhamburan(){
+    fotoInterval = setInterval(munculFoto, 2200);
+  }
+  function stopFotoBerhamburan(){
+    clearInterval(fotoInterval);
+  }
+  
+  document.getElementById("kadoIn").onclick = function() {if(fungsiAwal==0){audio.play();mulaiFotoBerhamburan();fungsiAwal=1;kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";wallpaper.style="transform: scale(1.5);";ket.style="display:none";setTimeout(initengahan,300);setTimeout(inipesan,500)}}
+  
+  async function inipesan(){
+    var { value: nama } = await swals.fire({
+           title: 'Masukin Nama Kamu', input: 'text',
+       });
+       if(nama && nama.length < 11){
+         window.nama = nama;
+         vketikhalo="Hai, " + nama + " ✨";
+         mulainama();
+         } else {
+           await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');inipesan();
+    }
+  }
+
+  //Variable Pertanyaan Akhir
+  var tanya = 'Mau Kado Gak Nih? 😶❤️';
+  var opstanya = 'Ayo jawab 😆';
+  var tompositif = 'Mau';
+  var tomnegatif = 'Engga';
+    
+    async function menuju(){stopFotoBerhamburan();pesanwhatsapp = "Makasii udah ngucapin " + nama + " ultah ><";await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+</script>
+<script src="https://malasid.github.io/html/hbd.js"></script>
+<!-- Sampai Sini -->
+</body>
+  </html>
